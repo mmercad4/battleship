@@ -1,20 +1,27 @@
 class Ship {
-  constructor(length) {
+  constructor(name, length) {
+    this.name = name;
     this.length = length;
     this.hitArray = [];
     this.sunk = false;
     this.placementArray = [];
   }
 
-  hit() {
+  hit(index) {
     if (this.sunk === true) return;
-    this.hitArray.push("x");
+    this.hitArray.push(index);
   }
 
   isSunk() {
     if (this.hitArray.length === this.length) {
       this.sunk = true;
     }
+  }
+
+  resetShip() {
+    this.hitArray = [];
+    this.sunk = false;
+    this.placementArray = [];
   }
 }
 

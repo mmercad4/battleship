@@ -1,6 +1,6 @@
 import { Ship } from "./src/components/ship";
 
-const destroyer = new Ship(5);
+const destroyer = new Ship("destroyer", 5);
 
 test.skip("Length of ship is 5", () => {
   expect(destroyer.length).toBe(5);
