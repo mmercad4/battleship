@@ -1,7 +1,15 @@
+import { Ship } from "./ship";
+
 class Gameboard {
   constructor() {
     this.gameboard = [];
     this.populateGameboard();
+    const carrier = new Ship("Carrier", 5);
+    const battleship = new Ship("Battleship", 4);
+    const cruiser = new Ship("Cruiser", 3);
+    const submarine = new Ship("Submarine", 3);
+    const destroyer = new Ship("Destroyer", 2);
+    this.ships = [carrier, battleship, cruiser, submarine, destroyer];
   }
 
   populateGameboard() {
@@ -32,7 +40,7 @@ class Gameboard {
     for (let i = 0; i < ship.length; i++) {
       this.gameboard[placementIndex].shipPlaced = true;
       this.gameboard[placementIndex].ship = ship;
-      ship.placementArray.push(placementIndex);
+      this.gameboard.ships[0].placementArray.push(placementIndex);
       placementIndex += 10;
     }
   }
@@ -47,7 +55,6 @@ class Gameboard {
     if (this.gameboard[index].shipPlaced === true) {
       this.gameboard[index].hit = true;
       this.gameboard[index].ship.hitArray.push(index);
-      console.log(this.gameboard[index].ship);
     } else if (this.gameboard[index].shipPlaced === false) {
       this.gameboard[index].miss = true;
     }

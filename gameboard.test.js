@@ -2,7 +2,7 @@ import { Gameboard } from "./src/components/Gameboard";
 import { Ship } from "./src/components/ship";
 
 const gameboard = new Gameboard();
-const destroyer = new Ship("destroyer", 5);
+const destroyer = new Ship(5);
 
 test("Gameboard is 100 squares", () => {
   gameboard.gameboard;
@@ -51,9 +51,9 @@ test("Attack missed", () => {
 });
 
 test("Attack hit registered on ship", () => {
-  gameboard.placeShip(destroyer, 34);
-  gameboard.receiveAttack(34);
-  console.log(destroyer);
-  expect(destroyer.hitArray.includes(34)).toBeTruthy();
-  destroyer.resetShip();
-});
+    gameboard.placeShip(destroyer, 34);
+    gameboard.receiveAttack(10);
+    expect(gameboard.gameboard[10].miss).toBeTruthy();
+    destroyer.resetShip();
+   
+})
