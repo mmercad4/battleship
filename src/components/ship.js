@@ -10,6 +10,7 @@ class Ship {
   hit(index) {
     if (this.sunk === true) return;
     this.hitArray.push(index);
+    this.isSunk();
   }
 
   isSunk() {
