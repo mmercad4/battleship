@@ -40,7 +40,7 @@ class Gameboard {
     for (let i = 0; i < ship.length; i++) {
       this.gameboard[placementIndex].shipPlaced = true;
       this.gameboard[placementIndex].ship = ship;
-      this.gameboard.ships[0].placementArray.push(placementIndex);
+      this.gameboard[placementIndex].ship.placementArray.push(placementIndex);
       placementIndex += 10;
     }
   }
