@@ -6,11 +6,17 @@ body {
   background-color: #0c1821;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
 }
 
 .mainMenu__heading {
   color: white;
   margin: 0;
+}
+
+.mainMenu__instruction {
+  color: white;
 }
