@@ -1,5 +1,16 @@
-.game__heading {
+body {
+  margin: 0;
+}
+
+.mainMenu__container {
+  background-color: #0c1821;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.mainMenu__heading {
+  color: white;
+  margin: 0;
 }

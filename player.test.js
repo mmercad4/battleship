@@ -16,3 +16,8 @@ test("player1 gameboard is matching gameboard", () => {
   player1.gameboard.ships[2].resetShip();
   player1.gameboard.rePopulateGameboard();
 });
+
+test("player1 can attack player2", () => {
+  player1.attack(5, player2);
+  expect(player2.gameboard[5].hit).toBeTruthy();
+});
