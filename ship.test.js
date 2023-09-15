@@ -1,18 +1,18 @@
-import { Ship } from "./src/components/ship";
+import { Ship } from "./src/components/Ship.js";
 
 const destroyer = new Ship("destroyer", 5);
 
-test.skip("Length of ship is 5", () => {
+test("Length of ship is 5", () => {
   expect(destroyer.length).toBe(5);
 });
 
-test.skip("Destroyer was hit Once", () => {
+test("Destroyer was hit Once", () => {
   destroyer.hitArray = [];
   destroyer.hit();
   expect(destroyer.hitArray.length).toBe(1);
 });
 
-test.skip("Destroyer was hit three times", () => {
+test("Destroyer was hit three times", () => {
   destroyer.hitArray = [];
   destroyer.hit();
   destroyer.hit();
@@ -21,7 +21,7 @@ test.skip("Destroyer was hit three times", () => {
   expect(destroyer.hitArray.length).toBe(3);
 });
 
-test.skip("Destroyer was sunk", () => {
+test("Destroyer was sunk", () => {
   destroyer.hitArray = [];
   destroyer.hit();
   destroyer.isSunk();
@@ -33,6 +33,5 @@ test.skip("Destroyer was sunk", () => {
   destroyer.isSunk();
   destroyer.hit();
   destroyer.isSunk();
-  console.log(destroyer.hitArray);
   expect(destroyer.sunk).toBeTruthy();
 });

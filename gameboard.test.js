@@ -1,5 +1,5 @@
 import { Gameboard } from "./src/components/Gameboard";
-import { Ship } from "./src/components/ship";
+import { Ship } from "./src/components/Ship.js";
 
 const gameboard = new Gameboard();
 const destroyer = new Ship(5);

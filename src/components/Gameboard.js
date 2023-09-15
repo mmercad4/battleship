@@ -1,4 +1,4 @@
-import { Ship } from "./ship";
+import { Ship } from "./Ship.js";
 
 class Gameboard {
   constructor() {
@@ -63,7 +63,6 @@ class Gameboard {
 
   haveAllShipsSunk() {
     let counter = 0;
-    console.log(this.ships);
     this.ships.forEach((ship) => {
       if (ship.sunk === true) {
         counter++;
