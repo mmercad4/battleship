@@ -13,7 +13,7 @@ class Game {
   startGame(event) {
     this.gameStarted = true;
     this.player1 = new Player(
-      event.target.parentNode.querySelector("input").value
+      event.target.parentNode.querySelector("input").value || "Player1"
     );
     this.player1GameBoard = new Gameboard();
     this.player1.gameboard = this.player1GameBoard;
@@ -21,6 +21,10 @@ class Game {
     this.cpu = new Player("CPU");
     this.cpuGameBoard = new Gameboard();
     this.cpu.gameboard = this.cpuGameBoard;
+  }
+
+  placePieces(e) {
+    
   }
 }
 

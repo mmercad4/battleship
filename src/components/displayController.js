@@ -74,8 +74,52 @@ class DisplayController {
     nameContainer.appendChild(cpuName);
 
     //create Boards
+    const boardContainer = document.createElement("div");
+    boardContainer.className = "game__board--container";
+
+    const player1Board = document.createElement("div");
+    player1Board.className = "game__board--player1";
+
+    this.player1.gameboard.gameboard.forEach((square) => {
+      const element = document.createElement("div");
+      element.className = "player1Square";
+      element.innerHTML = "&nbsp";
+      element.setAttribute("data-square", square.index);
+      player1Board.appendChild(element);
+    });
+
+    const cpuBoard = document.createElement("div");
+    cpuBoard.className = "game__board--cpu";
+
+    this.cpu.gameboard.gameboard.forEach((square) => {
+      const element = document.createElement("div");
+      element.className = "cpuSquare";
+      element.innerHTML = "&nbsp";
+      element.setAttribute("data-square", square.index);
+      cpuBoard.appendChild(element);
+    });
+
+    boardContainer.appendChild(player1Board);
+    boardContainer.appendChild(cpuBoard);
+    gameContainer.appendChild(boardContainer);
 
     document.body.appendChild(gameContainer);
+
+    const player1Squares = document.querySelectorAll(".player1Square");
+
+    player1Squares.forEach((square) => {
+      square.addEventListener("click", (e) => {
+        console.log(e.target.getAttribute("data-square"));
+      });
+    });
+
+    const cpuSquares = document.querySelectorAll(".cpuSquare");
+
+    cpuSquares.forEach((square) => {
+      square.addEventListener("click", (e) => {
+        console.log(e.target.getAttribute("data-square"));
+      });
+    });
   }
 
   addEventListenersMainMenu(button, game, player) {

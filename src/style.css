@@ -70,3 +70,22 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+
+.game__board--container {
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+}
+
+.game__board--player1,
+.game__board--cpu {
+  width: 30rem;
+  height: 30rem;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.game__board--player1 div,
+.game__board--cpu div {
+  border: solid 1px black;
+}
