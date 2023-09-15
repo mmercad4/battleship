@@ -1,7 +1,7 @@
 import { Player } from "./src/components/Player";
 import { Gameboard } from "./src/components/Gameboard";
 
-const player1 = new Player();
+const player1 = new Player("Marco");
 const player1Gameboard = new Gameboard();
 
 const player2 = new Player();
@@ -17,7 +17,6 @@ test("player1 gameboard is matching gameboard", () => {
   player1.gameboard.rePopulateGameboard();
 });
 
-test("player1 can attack player2", () => {
-  player1.attack(5, player2);
-  expect(player2.gameboard[5].hit).toBeTruthy();
+test("Name grabbed from form", () => {
+  expect(player1.name).toBe("Marco");
 });

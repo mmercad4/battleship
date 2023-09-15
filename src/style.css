@@ -20,3 +20,53 @@ body {
 .mainMenu__instruction {
   color: white;
 }
+
+.game__nav {
+  padding: 0.5rem;
+  margin: 0;
+  background-color: #324a5f;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game__container {
+  height: 90vh;
+}
+
+.game__instruction--container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.game__instruction--container .game__instructions {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #afc3d5;
+  border-radius: 1rem;
+  font-weight: 200;
+}
+
+.game__instruction--container .game__restartButton {
+  font-size: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #0c1821;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+}
+
+.game__name--container {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

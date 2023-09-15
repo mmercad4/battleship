@@ -1,7 +1,8 @@
 class Player {
-  constructor() {
+  constructor(name) {
     this.turn = false;
     this.gameboard = [];
+    this.name = name;
   }
 
   attack(index, player) {
