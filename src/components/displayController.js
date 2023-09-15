@@ -29,8 +29,12 @@ class DisplayController {
 
   displayGame() {
     this.clearDisplay();
+    this.generateNav();
+    this.genereateGameContainer();
+    this.addEventListenerGridSquares();
+  }
 
-    // Create nav bar
+  generateNav() {
     const nav = document.createElement("div");
     nav.className = "game__nav";
     const navHeading = document.createElement("h1");
@@ -38,7 +42,9 @@ class DisplayController {
     navHeading.textContent = "BATTLESHIP";
     nav.appendChild(navHeading);
     document.body.appendChild(nav);
+  }
 
+  genereateGameContainer() {
     // Create game container
     const gameContainer = document.createElement("div");
     gameContainer.className = "game__container";
@@ -104,7 +110,15 @@ class DisplayController {
     gameContainer.appendChild(boardContainer);
 
     document.body.appendChild(gameContainer);
+  }
 
+  addEventListenersMainMenu(button, game, player) {
+    button.addEventListener("click", game.startGame.bind(this));
+    button.addEventListener("click", this.displayGame.bind(this));
+    // button.addEventListener("click", player.createPlayer);
+  }
+
+  addEventListenerGridSquares() {
     const player1Squares = document.querySelectorAll(".player1Square");
 
     player1Squares.forEach((square) => {
@@ -120,12 +134,6 @@ class DisplayController {
         console.log(e.target.getAttribute("data-square"));
       });
     });
-  }
-
-  addEventListenersMainMenu(button, game, player) {
-    button.addEventListener("click", game.startGame.bind(this));
-    button.addEventListener("click", this.displayGame.bind(this));
-    // button.addEventListener("click", player.createPlayer);
   }
 
   clearDisplay() {

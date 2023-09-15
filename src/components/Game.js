@@ -21,10 +21,8 @@ class Game {
     this.cpu = new Player("CPU");
     this.cpuGameBoard = new Gameboard();
     this.cpu.gameboard = this.cpuGameBoard;
-  }
 
-  placePieces(e) {
-    
+    this.game.placePieces();
   }
 }
 
